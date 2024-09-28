@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical Supplies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <h1>Chemical Supplies</h1>
+
+    <!-- Form to Add User Input Box -->
+    <div class="container">
+        <form id="addForm">
+            <input type="text" id="chemicalName" placeholder="Chemical Name" required>
+            <input type="text" id="vendor" placeholder="Vendor" required>
+            <input type="number" id="density" placeholder="Density" required>
+            <input type="number" id="viscosity" placeholder="Viscosity" required>
+            <input type="text" id="packaging" placeholder="Packaging" required>
+            <input type="number" id="packSize" placeholder="Pack Size" required>
+            <input type="text" id="unit" placeholder="Unit" required>
+            <input type="number" id="quantity" placeholder="Quantity" required><br><br>
+            <button type="submit" style="margin-left: 48%;">Add Item</button>
+        </form>
+    </div>
+
+    <!-- Controls for Sorting, Refresh, Save -->
+    <div class="table-controls">
+        <button id="sortAsc">Sort Ascending</button>
+        <button id="sortDesc">Sort Descending</button>
+        <button id="refreshTable">Refresh Table</button>
+        <button id="saveData">Save Data</button>
+    </div>
+
+    <!-- Table for Chemical Supplies -->
+    <table id="chemicalTable">
+        <thead>
+            <tr>
+                <th>✔</th>
+                <th>ID</th>
+                <th>Chemical Name</th>
+                <th>Vendor</th>
+                <th>Density (g/m³)</th>
+                <th>Viscosity (m²/s)</th>
+                <th>Packaging</th>
+                <th>Pack Size</th>
+                <th>Unit</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Data rows go here -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(() => console.log('Service Worker Registered'));
+        }
+      </script>
+      
+</body>
+</html>
